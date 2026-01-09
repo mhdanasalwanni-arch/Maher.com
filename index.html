@@ -48,6 +48,7 @@ body {
   object-fit:contain;
   border:6px solid #f9f9f9;
   background:#f9f9f9;
+  position: relative;
 }
 
 /* Content */
@@ -174,13 +175,50 @@ h1{
 
   }
 }
+  .slider{
+  position: relative;
+  width: 100%;
+  height: 200px; /* change height if needed */
+  overflow: hidden;
+  margin-bottom: -80px;
+
+}
+
+.slider img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: slide 9s infinite;
+}
+
+/* Timing for each image */
+.slider img:nth-child(1){ animation-delay: 0s; }
+.slider img:nth-child(2){ animation-delay: 3s; }
+.slider img:nth-child(3){ animation-delay: 6s; }
+
+@keyframes slide{
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
 
 </style>
 </head>
 <body>
 <div class="phone">
+
   <div class="header">
-    <img src="img/Shop1.jpg" class="hero" alt="hero">
+   <div class="slider">
+    <img src="img/Screenshot 2026-01-09 171228.jpg" class="hero" alt="hero">
+    <img src="img/Screenshot 2026-01-09 171319.jpg" class="hero" alt="hero">
+    <img src="img/Screenshot 2026-01-09 171606.jpg" class="hero" alt="hero">
+  </div>
+
     <img src="logo.png" class="logo" alt="Logo">
   </div>
   <div class="content ">
@@ -223,4 +261,3 @@ NhatsApp
 });
 
 </script>
-
