@@ -10,10 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  background:#e9e6e3;
-  font-family:Inter, sans-serif;
+/* --- Light mode (default) --- */
+body {
+  margin: 0;
+  background: #e9e6e3;
+  font-family: Inter, sans-serif;
+  color: #000;
 }
 
 .phone{
@@ -28,15 +30,14 @@ body{
 /* Header image */
 .header{
   text-align:center;
-
-
 }
-  .ephesis-regular {
+
+.ephesis-regular {
   font-family: "Ephesis", cursive;
   font-weight: 400;
   font-size: 40px;
   font-style: normal;
-  color: lightgray;
+  color: #333;
 }
 
 /* Logo circle */
@@ -67,12 +68,14 @@ h1{
   color:#888;
   margin-bottom:25px;
 }
+
 .subtitle1{
   font-size:13px;
   letter-spacing:2px;
   color:#888;
   margin-bottom:25px;
 }
+
 /* Info list */
 .info{
   text-align:left;
@@ -122,11 +125,43 @@ h1{
   font-size:13px;
   color:#777;
 }
+
 .hero{
   object-position: fixed;
   width: 100%;
   margin-bottom: -80px;
 }
+
+/* --- Dark mode overrides --- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #fff;
+  }
+
+  .phone{
+    background:#1a1a1a;
+    box-shadow:0 30px 80px rgba(0,0,0,.7);
+  }
+
+  .ephesis-regular {
+    color: lightgray;
+  }
+
+  .subtitle, .subtitle1{
+    color:#aaa;
+  }
+
+  .info div{
+    color:#ccc;
+  }
+
+  .footer{
+    border-top:1px solid #333;
+    color:#bbb;
+  }
+}
+
 </style>
 </head>
 
@@ -175,3 +210,13 @@ NhatsApp
 
 </body>
 </html>
+<script >
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if(e.matches) {
+    console.log('Switched to dark mode');
+  } else {
+    console.log('Switched to light mode');
+  }
+});
+
+</script>
