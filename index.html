@@ -137,6 +137,7 @@ h1{
   body {
     background-color: #121212;
     color: #fff;
+
   }
 
   .phone{
@@ -150,15 +151,24 @@ h1{
 
   .subtitle, .subtitle1{
     color:#aaa;
-  }
 
+  }
+  .social1{
+              filter: var(--img-filter);
+    --img-filter: brightness(0) invert(1);
+
+  }
   .info div{
     color:#ccc;
+          filter: var(--img-filter);
+    --img-filter: brightness(0) invert(1);
+
   }
 
   .footer{
     border-top:1px solid #333;
     color:#bbb;
+
   }
 }
 
@@ -198,8 +208,8 @@ NhatsApp
     <div class="social">
       <a href="https://www.instagram.com/maherchina91?igsh=ZWljaXVtaXgxNGQ=" target="_blank" ><img src="icons/instagram.svg"></a>
       <a href="https://www.tiktok.com/@maher.china?_r=1&_t=ZS-92vOD1feAIJ" target="_blank" ><img src="icons/tiktok.svg"></a>
-      <a href="https://wa.me/+8615817070050"><img src="icons/whatsapp.svg" target="_blank" ></a>
-      <a href="#"><img src="icons/wechat.png"></a>
+      <a  href="https://wa.me/+8615817070050"><img src="icons/whatsapp.svg" target="_blank" ></a>
+      <a class="social1" href="#"><img src="icons/wechat.png"></a>
     </div>
   </div>
 
